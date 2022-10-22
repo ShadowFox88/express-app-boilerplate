@@ -1,5 +1,6 @@
-import express from "express";
 import path from "path";
+
+import express from "express";
 
 const TEMPLATE_PATH = path.resolve("./dist/index.html");
 const router = express.Router();
