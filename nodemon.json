@@ -1,0 +1,5 @@
+{
+    "exec": "node --experimental-specifier-resolution=node ./app.mjs",
+    "ext": "mjs,hbs,json,html",
+    "watch": ["./app.mjs", "./src"]
+}
