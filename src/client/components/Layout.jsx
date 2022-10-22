@@ -3,8 +3,8 @@ import { capitalize as capitalise } from "lodash";
 
 export default function Layout({
     children,
+    title,
     className = "h-full w-full",
-    title = "Express App Boilerplate",
 }) {
     const formattedTitle = capitalise(title);
 

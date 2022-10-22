@@ -1,5 +1,5 @@
 import Layout from "@/client/components/Layout";
 
 export default function Home() {
-    return <Layout>Hello, World!</Layout>;
+    return <Layout title="Express Boilerplate App">Hello, World!</Layout>;
 }
