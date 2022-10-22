@@ -13,7 +13,8 @@
         "parser": {
             "jsx": true,
             "syntax": "ecmascript"
-        }
+        },
+        "target": "es2021"
     },
     "minify": true
 }
