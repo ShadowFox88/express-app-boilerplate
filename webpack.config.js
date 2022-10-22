@@ -9,13 +9,17 @@ import { merge } from "webpack-merge";
 import development from "./webpack.dev.js";
 import production from "./webpack.prod.js";
 
-const mode = process.env.NODE_ENV ?? "production";
-const chosen = mode === "production" ? production : development;
+const IS_DEV = process.env.NODE_ENV === "development";
+const IS_PROD = process.env.NODE_ENV === "production";
+const MODE = IS_PROD ? "production" : "development";
+const chosen = IS_PROD ? production : development;
+
 const common = {
     entry: {
         index: { import: "./src/client/App.jsx", dependOn: "shared" },
         shared: ["lodash", "react-dom", "react-router-dom"],
     },
+    mode: MODE,
     module: {
         rules: [
             {
@@ -31,7 +35,19 @@ const common = {
             {
                 include: path.resolve("./src/client"),
                 test: /\.m?jsx$/i,
-                loader: "swc-loader",
+                use: {
+                    loader: "swc-loader",
+                    options: {
+                        jsc: {
+                            transform: {
+                                react: {
+                                    development: IS_DEV,
+                                    refresh: IS_DEV,
+                                },
+                            },
+                        },
+                    },
+                },
             },
         ],
     },
@@ -57,9 +73,8 @@ const common = {
         extensions: ["...", ".mjs", ".jsx"],
         preferRelative: true,
     },
-    mode,
 };
 
-console.log(`Mode is "${mode}"\n`);
+console.log(`Mode is "${MODE}"\n`);
 
 export default merge(common, chosen);

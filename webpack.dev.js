@@ -11,6 +11,7 @@ export default {
         historyApiFallback: {
             index: "/",
         },
+        hot: true,
         port: process.env.DEV_SERVER_PORT || 3000,
         proxy: {
             "**": `http://localhost:${SERVER_PORT}`,
