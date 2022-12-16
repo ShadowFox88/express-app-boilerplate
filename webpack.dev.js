@@ -1,22 +1,29 @@
-import path from "path";
-import process from "process";
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import webpack from "webpack";
 
-const SERVER_PORT =
-    process.env.SERVER_PORT || process.env.NODE_ENV === "development"
-        ? 4000
-        : 3000;
+import config from "./src/server/config.js";
+
+const PORT = config.PORT || 3000;
 
 export default {
     devServer: {
-        historyApiFallback: {
-            index: "/",
-        },
+        historyApiFallback: true,
+        host: "0.0.0.0",
         hot: true,
-        port: process.env.DEV_SERVER_PORT || 3000,
-        proxy: {
-            "**": `http://localhost:${SERVER_PORT}`,
-        },
-        static: path.resolve("./public"),
+        port: PORT,
+        watchFiles: [
+            "./public/index.html",
+            "./src/components/**/*.jsx",
+            "./src/pages/**/*.jsx",
+            "./public/**/*",
+        ],
     },
     devtool: "inline-source-map",
+    entry: {
+        index: ["webpack-hot-middleware/client", "./src/pages/App.jsx"],
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new ReactRefreshWebpackPlugin(),
+    ],
 };
