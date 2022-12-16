@@ -3,7 +3,7 @@ const daisyUI = require("daisyui");
 const tailwindCSSTypography = require("@tailwindcss/typography");
 
 module.exports = {
-    content: ["src/client/**/*.jsx"],
+    content: ["./src/components/**/*.jsx", "./src/pages/**/*.jsx"],
     daisyui: {
         // https://daisyui.com/docs/themes/#-4
         themes: ["light"],

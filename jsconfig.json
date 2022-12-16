@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        "target": "es2021"
+    },
+    "exclude": ["./node_modules/", "./src/server/"],
+    "include": [
+        "./index.js",
+        "./src/components/**/*",
+        "./src/pages/**/*",
+        "./src/shared/**/*"
+    ]
+}

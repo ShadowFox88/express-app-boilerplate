@@ -6,7 +6,7 @@
     },
     "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
     "ignorePatterns": ["dist/", "node_modules/", ".yarn/"],
-    "overrides": [{ "files": ["**/*.mjs", "**/*.jsx"] }],
+    "overrides": [{ "files": ["**/*.js", "**/*.jsx"] }],
     "parser": "@babel/eslint-parser",
     "parserOptions": {
         "ecmaFeatures": {
@@ -18,8 +18,9 @@
     "plugins": ["react", "react-hooks"],
     "root": true,
     "rules": {
+        "no-console": "warn",
         "no-control-regex": "off",
-        "react/prop-types": 0,
+        "react/prop-types": "off",
         "react/react-in-jsx-scope": "off"
     },
     "settings": {

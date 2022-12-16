@@ -1,5 +1,5 @@
 {
-    "exec": "node --experimental-specifier-resolution=node ./app.mjs",
-    "ext": "mjs,hbs,json,html",
-    "watch": ["./app.mjs", "./src"]
+    "exec": "node --experimental-fetch --experimental-specifier-resolution=node .",
+    "ext": "html,js,json,cjs,toml",
+    "watch": ["*.cjs", "*.json", "*.toml", "./index.js", "./public/index.html", "./src/server/**/*.js", "./src/shared/**/*.js"]
 }
