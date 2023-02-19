@@ -18,7 +18,6 @@ The project also runs the Webpack development server (`webpack-dev-server`) and 
 
 ## Inclusions
 
--   [Yarn 2](https://yarnpkg.com/) and [why](https://yarnpkg.com/getting-started/migration#why-should-you-migrate)
 -   [TOML](https://toml.io/en/)
 -   [ESLint](https://eslint.org/)
 -   [Prettier](https://prettier.io/)
@@ -45,15 +44,6 @@ PORT=3000
 -   `eslint-config-prettier` - prevents ESLint conflictions with Prettier
 -   `eslint-plugin-react` - lint React and in conjunction JSX
 -   `eslint-plugin-react-hooks` - enforce hook rules, self-explanatory
-
-### Webpack
-
--   `html-webpack-plugin` - used for HTML template page
--   SWC (`@swc/core`, `swc-loader`) - highly performant JS/X parser and minifier with CSS support soon™, used to cut build times down
--   [Code-splitting](https://webpack.js.org/guides/code-splitting/) - may prove sub-optimal for more expansive projects, [YMMV](https://dictionary.cambridge.org/dictionary/english/ymmv)
--   `webpack-dev-middleware` - inserts Webpack directly into your web server as a middleware option, setup to conditionally run during development and...
--   `webpack-hot-middleware` - adds support for HMR and
--   `@pmmmwh/react-refresh-webpack-plugin` - brings HMR to all things React
 
 ### React
 
