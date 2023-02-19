@@ -7,8 +7,7 @@
     "main": "index.js",
     "type": "module",
     "engines": {
-        "node": "18.x",
-        "yarn": "3.x"
+        "node": "18.x"
     },
     "scripts": {
         "build": "NODE_ENV=production webpack",
